@@ -19,20 +19,8 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
     }
 
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
-        
-        let client = URLSessionHTTPClient()
-        let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
-        let loader = RemoteFeedLoader(url: testServerURL, client: client)
-        
-        let expectation = expectation(description: "Wait for load completion")
-        var receivedResult: LoadFeedResult?
-        loader.load { result in
-            receivedResult = result
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 5.0)
-        
-        switch receivedResult {
+         
+        switch getFeedResult() {
             
         case let .success(items):
             XCTAssertEqual(items.count, 8, "Expected 8 items in the test account feed")
@@ -48,9 +36,9 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
             XCTAssertEqual(items[7], expectedItem(at: 7))
             
             /// If you have large number of items, you can use enumerated to assert each item
-//            items.enumerated().forEach({ index, item in
-//                XCTAssertEqual(item, expectedItem(at: index))
-//            })
+            //            items.enumerated().forEach({ index, item in
+            //                XCTAssertEqual(item, expectedItem(at: index))
+            //            })
             
         case let .failure(error):
             XCTFail("Expected successful feed result, got \(error) instead")
@@ -62,7 +50,20 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
     }
     
     //MARK: - Helpers
-    
+    private func getFeedResult() -> LoadFeedResult? {
+        let client = URLSessionHTTPClient()
+        let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
+        let loader = RemoteFeedLoader(url: testServerURL, client: client)
+        
+        let expectation = expectation(description: "Wait for load completion")
+        var receivedResult: LoadFeedResult?
+        loader.load { result in
+            receivedResult = result
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+        return receivedResult
+    }
     private func expectedItem(at index: Int) -> FeedItem {
         return FeedItem(
             id: id(at: index),
