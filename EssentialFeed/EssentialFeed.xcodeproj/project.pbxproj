@@ -11,7 +11,7 @@
 		080EDF0C21B6DAE800813479 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EDF0B21B6DAE800813479 /* FeedItem.swift */; };
 		080EDF0E21B6DCB600813479 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EDF0D21B6DCB600813479 /* FeedLoader.swift */; };
 		C8D11A452E2D0EE400A7B6A0 /* XCTestCase+MemoryLeakTracking .swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D11A442E2D0EE400A7B6A0 /* XCTestCase+MemoryLeakTracking .swift */; };
-		C8D777E42E1A6E9300A87F2E /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D777E32E1A6E9300A87F2E /* RemoteFeedLoaderTests.swift */; };
+		C8D777E42E1A6E9300A87F2E /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D777E32E1A6E9300A87F2E /* LoadFeedFromRemoteUseCaseTests.swift */; };
 		C8D777E82E1ADCEF00A87F2E /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D777E72E1ADCEA00A87F2E /* RemoteFeedLoader.swift */; };
 		C8E200062E260AA800047286 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E200052E260AA800047286 /* URLSessionHTTPClientTests.swift */; };
 		C8E2FFF22E241E9A00047286 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2FFF12E241E9A00047286 /* HTTPClient.swift */; };
@@ -46,7 +46,7 @@
 		080EDF0B21B6DAE800813479 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		080EDF0D21B6DCB600813479 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		C8D11A442E2D0EE400A7B6A0 /* XCTestCase+MemoryLeakTracking .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking .swift"; sourceTree = "<group>"; };
-		C8D777E32E1A6E9300A87F2E /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
+		C8D777E32E1A6E9300A87F2E /* LoadFeedFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		C8D777E72E1ADCEA00A87F2E /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 		C8E200052E260AA800047286 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		C8E2FFF12E241E9A00047286 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				C8D11A432E2D0EB600A7B6A0 /* Helpers */,
-				C8D777E32E1A6E9300A87F2E /* RemoteFeedLoaderTests.swift */,
+				C8D777E32E1A6E9300A87F2E /* LoadFeedFromRemoteUseCaseTests.swift */,
 				C8E200052E260AA800047286 /* URLSessionHTTPClientTests.swift */,
 			);
 			path = FeedAPI;
@@ -323,7 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8D777E42E1A6E9300A87F2E /* RemoteFeedLoaderTests.swift in Sources */,
+				C8D777E42E1A6E9300A87F2E /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				C8E200062E260AA800047286 /* URLSessionHTTPClientTests.swift in Sources */,
 				C8D11A452E2D0EE400A7B6A0 /* XCTestCase+MemoryLeakTracking .swift in Sources */,
 			);
@@ -594,7 +594,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4396W4KW2R;
+				DEVELOPMENT_TEAM = 44ZFF8R4S6;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
@@ -614,7 +614,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4396W4KW2R;
+				DEVELOPMENT_TEAM = 44ZFF8R4S6;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
