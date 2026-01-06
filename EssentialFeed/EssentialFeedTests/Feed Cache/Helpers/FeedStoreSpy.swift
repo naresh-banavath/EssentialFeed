@@ -12,6 +12,7 @@ class FeedStoreSpy: FeedStore {
    
     private var deletionCompletions = [DeletionCompletion]()
     private var insertionCompletions = [InsertionCompletion]()
+    private var retrievalCompletions = [RetrievalCompletions]()
 
     
     enum ReceivedMessage: Equatable {
@@ -43,8 +44,13 @@ class FeedStoreSpy: FeedStore {
     func completeInsertionSuccessfully(at index: Int = 0) {
         insertionCompletions[index](nil)
     }
-    func retrieve() {
+    func retrieve(completion: @escaping RetrievalCompletions) {
+        retrievalCompletions.append(completion)
         receivedMessages.append(.retrieve)
+    }
+    
+    func completeRetrieval(with error: NSError, at index: Int = 0) {
+        retrievalCompletions[index](error)
     }
     
 }
